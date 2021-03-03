@@ -1,3 +1,8 @@
+<% if (enhanced_cart.length == 0) %>
+  <div class="empty-cart">Your cart is empty!</div>
+  <a class="main-page-link" href="localhost:3000">Return to main page</a>
+<% else %>
+
 <section class="cart-show">
 
   <header class="page-header">
@@ -25,7 +30,7 @@
             TOTAL:
           </th>
           <th>
-            <%= cart_subtotal_cents / 100.0 %>
+            <%= humanized_money_with_symbol cart_subtotal_cents / 100.0 %>
           </th>
         </tr>
       </tfoot>
@@ -50,3 +55,5 @@
   </div>
 
 </section>
+
+<% end %>
