@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   # include HttpAuthConcern
 
-  http_basic_authenticate_with name: ENV.username, password: ENV.password
+  http_basic_authenticate_with name: ENV['username'], password: ENV['password']
 
 
   protect_from_forgery with: :exception
